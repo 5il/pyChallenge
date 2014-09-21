@@ -1,9 +1,6 @@
-import httplib
+import requests
 
-httpHandle = httplib.HTTPConnection("www.pythonchallenge.com")
-httpHandle.request("GET", "/pc/def/equality.html")
-response = httpHandle.getresponse()
-page = response.read()
+page = requests.get("http://www.pythonchallenge.com/pc/def/equality.html").text
 
 text = page.split("<!--", 1)[1]
 i = 5

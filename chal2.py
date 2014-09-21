@@ -1,12 +1,9 @@
 # This assumes "rare characters" are alphabetic based off
 #    previous experience with this challenge
 
-import httplib
+import requests
 
-httpHandle = httplib.HTTPConnection("www.pythonchallenge.com")
-httpHandle.request("GET", "/pc/def/ocr.html")
-response = httpHandle.getresponse()
-page = response.read()
+page = requests.get("http://www.pythonchallenge.com/pc/def/ocr.html").text
 
 for char in page.split("%%", 1)[1]:
  if char.isalnum():
