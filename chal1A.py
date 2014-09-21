@@ -1,6 +1,5 @@
-encrypted = raw_input('Enter string: ')
-for char in encrypted:
+for char in raw_input('Enter string: '):
  if char.isalpha():
-  print chr((((ord(char) + 2) - 97 ) % 26 ) + 97 ),
+  print chr(((ord(char) - 95 ) % 26 ) + 97 ),
  else:
   print char,
